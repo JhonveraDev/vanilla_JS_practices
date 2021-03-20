@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+
+        const saludar =()=> console.log(saludar(`${nombre}`))
+        saludar('Irmita')
+        
+        /*const anderson={
+            nombre:'Anderson',
+            apellido:'Vera',
+            edad:'24',
+            cargos:['Developer','Full Stack','Maquetador'],
+            
+            pasatiempos:{
+                entrenamiento:"Gym",
+                rutinas:'programacion',
+                pasion:'ser el mejor',
+            },
+
+            saludar:function(){
+                console.log('Hola, :D')
+            },
+
+            presentacion:function(){
+                console.log(`Mi edad es ${this.edad} y soy ${this.cargos} y sencillamente te quiero saludar`)
+            }
+                    
+        }
+
+        console.log(anderson['cargos'][0]);
+        console.log(anderson.saludar());
+        console.log(anderson.pasatiempos);
+        console.log(anderson.pasatiempos['rutinas']);
+        console.log(anderson.pasatiempos.pasion)
+        console.log(anderson.presentacion());
+        console.log(Object.keys(anderson));
+        console.log(Object.values(anderson));
+        console.log(anderson.hasOwnProperty('nombre')); //Para encontrar si tenemos cierta propiedad
+        */
+
+        /*const jhon={
+            nombre:'anderson',
+            apellido:'vera',
+            edad:24,
+        }
+
+        for (const a in jhon){
+            console.log(`key:${a},Value:${a.jhon},Value:${jhon[a]}`);
+        }
+
+        cadena='Hola :D'
+        for (const caractert of cadena){
+            console.log(caractert)
+        } */
+
+        /*Una funcion dentro de un objeto se le llamada Metodo, las variables dentro del objeto se llama atributos */
+        //For in es para objetos primitivos de JS, mientras que For of es para recorrer arreglos
+
+       /* try{
+            let numero='a'
+
+            if(isNaN(numero)){
+                throw new Error('El caracter introducido no es numero, por favor verifica nuevamente')
+            }
+
+            let suma=5
+            suma+=numero;
+            console.log(suma)
+
+        }catch(error){
+            console.error(`Se ha producido un Error inminente: ${error}`);
+
+        }finally{
+
+        }*/
+
+
+        /*const numero=[1,2,3,4,5,6,7,8,9,10]
+
+        for(let i=0;i<numero.length;i++){
+            
+            if(i===10){
+                break;//Continue, omite el valor que necesitamos, pero sigue con la secuencia
+            }
+
+            console.log(numero[i])//Muestra los elementos de los arreglos
+            console.log(i) // Hace el recorrido con Length desde 0 a N' numero
+
+        }*/
+
+        //Destructuring -----------------------------
+        /*
+        const numeros=[1,2,3,4]
+
+        const[one,two,three,four]=numeros
+        console.log(one,two,three,four)
+        
+        const persona ={
+            nombre:'anderson',
+            apellido:'vera',
+            edad:24,
+
+        }
+
+        let{nombre,apellido}=persona
+        console.log(nombre,apellido)*/
+
+
+        //OBJETOS LITERALES -----------
+        /*
+        let empresa='Genshin Impact',
+        lanzamiento='Septiembre',
+        estilo='MOBA',
+        modalidad='Aventura - PVM'
+
+
+        const razor={ //Creación de Objeto
+            nombre:'Razor',
+            apellido:'Impact',
+            edad:'24',
+            empresa:empresa,
+            lanzamiento:lanzamiento,
+            estilo:estilo,
+            modalidad:modalidad,
+
+            habilidad:function(){
+                console.log("Lanzamiento de Mega Susano")
+            }
+        }
+
+        const Klee={
+            nombre:'Klee',
+            apellido:'Bombaslocas :v',
+            edad:'18',
+            empresa:empresa,
+            lanzamiento:lanzamiento,
+            estilo:estilo,
+            modalidad,
+
+            habilidad(){ //Una nueva modalidad para funciones
+                console.log('Lanzamiento de bomba gigante')
+            }
+        }
+
+        console.log(razor);
+        console.log(Klee);
+        Klee.habilidad();
+        */
+
+        //Parámetros REST & Operador Spread--------------------------------------
+/*
+        function sumar(a,b,...c){//capacidad de tener parametros infinitos
+            let resultado = a+b;
+
+
+            c.forEach(function(n){
+                resultado +=n
+            });
+            return resultado;
+
+        }
+
+        console.log(sumar(1,5));
+
+
+*/      
+
+    </script>
+    
+
+</body>
+</html>

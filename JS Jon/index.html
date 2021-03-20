@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#"/>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*    const saludar = (nombre) => console.log(`Hola ${nombre}`);
+        saludar('Irmita')
+
+
+        const multiplicar = function (c,d){
+            return c*d
+        }
+
+
+
+        const sumar = (a,b) => a+b;
+
+        console.log(sumar(8,8))
+        console.log(multiplicar(2,2))
+
+        const funciondDeVariasLineas = ()=>{
+            console.log('uno')
+            console.log('dos')
+            console.log('tres')
+        }
+
+        funciondDeVariasLineas();
+
+
+
+        const numeros =[1,2,3,4]
+
+        numeros.forEach((el,index)=>{
+            console.log(`${el} se encuentra en la posición ${index}`)
+
+        })*/
+
+
+    /*    
+        function Animal(nombre,genero){
+            //atributos 
+            this.nombre=nombre
+            this.genero=genero
+
+
+            //Metodos
+
+            this.sonar=function(){
+                console.log("Sonidos de Animal")
+            }
+
+            this.saludar = function(){
+                console.log(`Saludos, me llamo ${this.nombre}`)
+            }
+        }
+        */
+
+
+        
+      //  --------------------HERENCIA PROTOTIPICA-----------------
+     /*   function Animal(nombre,genero){
+            //atributos 
+            this.nombre=nombre
+            this.genero=genero
+        }
+
+            //Metodos aferrados al prototipo
+            Animal.prototype.sonar=function(){
+                console.log("Sonidos de Animal")
+            }
+
+            Animal.prototype.saludar = function(){
+                console.log(`Saludos, me llamo ${this.nombre}`)
+            }
+    
+
+
+        const snoopy = new Animal('Snoppy','Macho'),
+            lola = new Animal('Lola','Hembra')
+
+        console.log(snoopy)
+        console.log(lola)
+
+        lola.saludar()
+        
+
+        //Herencia Prototipica
+
+        function Perro(nombre,genero,tamanio){ 
+            this.super = Animal //Hacemos referencia de la funcion Padre de la cual estamos heredando atributos
+            this.tamanio=tamanio //Creamos atributos independientes del hijo
+            this.super(nombre, genero) //Hacemos mencion de los atributos que vamos a heredar
+            //Heredando atributos de otra funcion (Constructora padre)
+        }
+
+        //Perro esta heredando de Animal (Funcion constructora padre)
+        Perro.prototype = new Animal();
+        Perro.prototype.constructor = Perro;
+
+        //Sobreescritura de metodos del prototipo padre en el hijo
+        Perro.prototype.sonar = function(){
+            console.log('Perro Macho bien bravo ladrando')
+        }
+
+        //Metodo independiente del hijo
+        Perro.prototype.saludar = function(){
+            console.log('Hola perro, a que te muerdo :v')
+        }
+
+        //Asignamos los atributos
+        const matias = new Perro('Matias','Macho','25cm')
+
+        //hacemos el llamado de nuestra funcion con los atributos ya asignados
+        console.log(matias)
+        //Llamamos el metodo de nuestra funcion hija
+        matias.sonar()
+        matias.saludar()
+    */
+    /*
+
+    class Animal{
+        //El constructor es un metodo especial que se ejecuta en el momento de instaciar la clase
+        constructor(nombre,genero){
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+
+        sonar(){
+            console.log('Hago sonido')
+        }
+
+        saludar(){
+            console.log(`Hola ${this.nombre}`)
+        }
+    }
+
+    const paimon = new Animal('Paimon','Cachorra')//Variable
+
+
+    class Cachorro extends Animal{ //Herencia de la clase Animal que se convierte en padre de Cachorro
+        constructor(nombre,genero,tamanio){ //Definimos un constructor especificando los elementos que vamos a heredar, ademas de especificar los atributos individuales del cachorro
+            super(nombre,genero);//Los atributos heredados
+            this.tamanio = tamanio //Los atributos individuales
+        }
+
+        comer(){ //Metodo básico de la clase
+            console.log('Estoy comiendo')
+        }  
+
+        static queEres(){//al ser un metodo estatico no hay necesidada de crear un objeto para gestionar su llamado
+            console.log('compañero del viajero')
+        } 
+    }
+    
+    paimon.saludar() //Lamado del metodo
+    const razor = new Cachorro('Razor','Macho',40)//Instancia de objeto basado en la clase
+     //creaccion del objeto y sus atributos definidos
+    console.log(razor)//Exponiendo todos los datos del objeto 
+    razor.comer()//Monstrando el metodo
+    razor.sonar()
+    razor.saludar()
+    Cachorro.queEres();
+
+    */
+    /*
+    class Persona{
+        constructor(nombre,apellido){
+            this._nombre = nombre;
+            this._apellido = apellido;
+        }
+
+        get nombre(){
+            return this._nombre;
+        }
+
+        set nombre(nombre){
+            this._nombre = nombre;
+        }
+
+        get apellido(){
+            return this._apellido;
+        }
+
+        set apellido(apellido){
+            this._apellido = apellido;
+        }  
+    }
+
+    let edward = new Persona ('edward','soez')
+    
+    console.log(edward)
+    console.log(edward.apellido)
+    
+    edward.apellido ='ortiz'
+    console.log(edward.apellido)
+    */
+
+    /*
+    //OBJETOS DE CONSOLA
+    console.log(console)
+    console.log(window)//Ventana (objeto) principal que nos muestra todas las propiedades del navegador
+    console.log(document)
+    console.dir(document)
+
+
+    console.group('Frameworks Javascript')
+    console.log('Vue js')
+    console.log('Node js')
+    console.log('React js')
+    console.log('Angular')
+    console.log('Ember js')
+    console.log('jQuery.js ')
+    console.log('Foundation.js')
+    console.groupEnd();
+    console.table(Object.entries(console).sort()) //Transformacion a un arreglo
+    
+    const numeros =[1,2,3,4]
+    console.table(numeros)
+
+    //Ejecicion de velocidad de un bloque de codigo de
+    
+    console.time('Etiqueta de medición')
+
+    const arreglo=Array(10)
+
+    for(i=0;i<arreglo.length;i++){
+        arreglo[i]=i
+        console.log(arreglo[i])
+
+    } 
+
+    console.timeEnd('Etiqueta de medición')
+
+    */
+
+    //Curso JavaScript: 27. Objeto Date - #jonmircha
+    /*
+    let fecha= new Date()
+    console.log(fecha.getDate())
+    console.log(fecha.getHours())
+    console.log(fecha.getMinutes())
+    console.log(fecha.getSeconds())
+    console.log(fecha.getMilliseconds())
+    console.log(fecha.getFullYear())
+    console.log(fecha.toDateString())
+    console.log(fecha.toLocaleString())
+    console.log(fecha.toLocaleDateString())
+    console.log(fecha.toTimeString())
+
+    let cumple = new Date(1996,9,27);
+    console.log(cumple)
+    */
+   //--------------------------------------------------------------------------------------------  
+    
+    //Curso JavaScript: 28. Objeto Math - #jonmircha
+
+    /*
+    console.log(Math.PI)
+    console.log(Math.abs(-7.8))
+    console.log(Math.ceil(7.8))
+    console.log(Math.floor(7.8))
+    console.log(Math.round(7.2))
+    console.log(Math.sqrt(81))
+    console.log(Math.pow(2,5))
+    console.log(Math.sign(-7.8))//Referencia a numero positivo o negativo -1 o 1
+    console.log(Math.random()*100)
+    */
+    //--------------------------------------------------------------------------------------------  
+    
+    //Curso JavaScript: 29. Operador de Cortocircuito - #jonmircha
+    /*
+    function saludar(nombre){
+        nombre = nombre || 'Usuario desconocido'
+        console.log(`Hola Señor ${nombre}`)
+    }
+    
+    saludar('Anderson')
+    saludar()
+
+    //Cortocircuito OR: cuando el valor de la izquierda en la expression siempre pueda validar a TRUE, es el valor que se cargara por defecto
+    //Cortocircuito AND: cuando el valor de la izquierda en la expression siempre pueda validar a FALSE, es el valor que se cargara por defecto
+    
+    
+    */
+
+    //----------------------------------------------------------------------
+    
+    //Curso JavaScript: 30. alert, confirm y prompt - #jonmircha
+    
+    /*window.alert ('Alerta')
+    window.confirm ('Confirmar')
+    window.prompt ('Prompt')
+    */
+    /*
+    let alerta = alert('Hola esto es una alerta'),
+    confirmacion = confirm ('Confirmar petición'),
+    aviso = prompt('Texto de aviso')
+
+    console.log(alerta)//Solo es un mensaje de muestra, no arroja valor de tipo
+    console.log(confirmacion)
+    console.log(aviso)
+    //----------------------------------------------------------------------
+    */
+
+    //Curso JavaScript: 32. Funciones Anónimas Autoejecutables - #jonmircha
+    /*
+    (function(){
+        console.log('IIFE')
+    })();//En este caso si es necesario colocar punto y comas
+
+    (function(A,B,C){
+        console.log('SEGUNDO IIFE')
+        console.log(A)
+        console.log(B)
+        console.log(C)
+        B.log('Este es un console.log')
+    })(document,console,window);
+
+    //-----------------------------------------------------------------------------------
+    */
+
+    
+    //Curso JavaScript: 34. Ejercicios de Lógica de Programación ( 1 / 10 ) - #jonmircha
+
+    //1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+    /*
+    const cadena='Hola Mundo'
+
+    function conteo(a){
+
+        if(!cadena){
+            console.warn('nada')
+        }else{
+            console.info(`La cadena ${cadena} tiene ${cadena.length} caracteres`)
+        }
+    }
+
+    conteo();
+    */
+    /*
+    //2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+    
+    const recortarTexto = (cadena='',longitud=undefined)=>(!cadena)?console.warm('No ingresaste una cadena de texto'):console.info(cadena.slice(0,longitud))
+
+    recortarTexto('Hola mundo',5)
+
+    */
+
+   //3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
+    /*
+    const arreglo=(cadena='',separador=undefined)=>(!cadena)?console.warm('No ingresaste una cadena de texto'):(separador===undefined)?console.log('No ingresaste un valor para el separador'):console.log(cadena.split(separador))
+
+
+    arreglo('anita lava la tina',' ') //Este tipo de Split solo realiza separacion por los elementos que se encuentren dentro de él
+
+    */
+
+    /*
+    
+    //4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+
+
+    const textoDeRepeticion =(texto='',repeticion=undefined)=>{
+        if(!texto){
+            console.warn('Cadena totalmente vacia')
+        }
+        if(repeticion===undefined){
+            console.warn('Sin numero para la repeticion')
+        }
+
+        if(!texto || repeticion===undefined){
+            console.info('No cuentas con ningudo de los datos')
+        }else{
+            for(i=1;i<=repeticion;i++){
+                console.info(`Tu texto repetido es ${texto} y la posición recorrida es ${i}`)
+
+            }
+
+        }
+
+    }
+
+    textoDeRepeticion()
+    textoDeRepeticion('dato',)
+    textoDeRepeticion('',5)
+    textoDeRepeticion('Dato',5)
+
+    */
+
+    /*
+    //5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+
+    const arreglo = (cadena='')=>(!cadena)?console.info('No tienes texto'):(console.log(cadena.split('').reverse().join('')))
+    
+    arreglo('Hola Mundo')
+
+    */
+    /*
+    //6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+    
+    const textoCadena=(cadena='',texto='')=>{
+
+        if(!cadena)return console.warn('No se ingreso cadena');
+        if(!texto)return console.warn('No se ingreso comparador');
+
+        let i=0,
+        contador=0
+
+        while(i!==-1){
+            i=cadena.indexOf(texto,i)
+
+            if(i!==-1){
+                i++
+                contador ++
+            }
+        }
+
+        console.log(`La palabra ${texto}, se repite ${contador}`)     
+        
+    }
+
+    textoCadena('anita lava la tina de anita','anita');
+    */
+
+    //7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+    /*
+    const palabra=(texto='')=>{
+        
+        palindromo=texto.split('').reverse().join('')
+
+        return(texto===palindromo)
+
+        ?console.info('Es Palindromo'):console.info('No es es Palindromo')
+        
+
+    }
+
+    palabra('salas')
+    
+    */
+
+    //--------------------------------------------------------------------------------------------  
+    /*
+    const aleatorio = ()=> console.info(Math.round((Math.random() *100)+500))
+    
+    aleatorio()    
+
+    */
+    /*
+    const factorial = (numero = undefined)=>{
+        if(numero === undefined)return console.warn('No ingresaste un numero');
+        if(typeof numero !== 'number')return console.error('El valor no es un Numero')
+        if(numero === 0)return console.error('El Numero no puede ser 0')
+    }
+    */
+
+    /*Grados a Faren y viceversa*/
+    
+    /*
+    const temperatura=(temperatura = undefined, validacion=undefined)=>{
+
+        if(temperatura === undefined)return console.error('Valor de temperatura no permitido');
+        if(validacion === undefined)return console.error('Valor de validacion no permitido');
+
+        if(typeof temperatura !== 'number')return console.error(`EL valor ${temperatura} No es un dato permitido`)
+        if(typeof validacion !== 'string')return console.error(`EL valor ${validacion} No es una validacion`)
+        
+        if(validacion.length !== 1 || !/(C|F)/.test(validacion))return console.log('no es una validacion permitida')
+
+        (validacion.length === 2)?console.log('Solo es prueba'):console.log('not valid')
+
+        if(validacion === 'F'){
+            console.log(`${temperatura}F° = ${Math.round((temperatura -32)* (5/9))}°C`)
+
+        }else if(validacion === 'C'){
+            console.log(`${temperatura}C° = ${Math.round((temperatura *9/5)+32)}`)
+        }
+    }
+
+    temperatura(55,'F')
+    */
+
+    /*CANTIDAD DE AÑOS PASADOS*/
+
+    /*Curso JavaScript: 44. Temporizadores (setTimeout & setInterval) - #jonmircha*/
+
+
+    /*Curso JavaScript: 45. Asincronía y el Event Loop - #jonmircha*/
+    /*
+    //Funcion Sincrona
+    console.log('Codigo sincrono')//Funcion anonima, ejecucion inmediata
+    console.log('Inicio')
+
+    function dos(){
+        console.log('Dos')
+    }
+
+
+    function uno(){
+        console.log('Uno')
+        dos();
+        console.log('Tres')
+    }
+
+    uno();
+    console.log('Fin')
+
+    console.log('-----------------------------------------')
+    /*
+    setTimeout(()=> {
+        console.log('Ejecutando')
+
+    },1000)
+    */
+
+    /*
+    //Funcion Asincrona
+
+    console.log('Codigo Asincrono')
+    console.log('Inicio')
+
+    function dos(){
+        setTimeout(function(){
+            console.log('Dos')
+        },1000)
+
+    }
+
+    function uno(){
+        setTimeout(function(){
+            console.log('Uno')
+        },0)
+        dos();
+        console.log('tres')
+    }
+
+    uno();
+    console.log('fin')
+
+    */
+
+    /*Curso JavaScript: 46. Callbacks - #jonmircha*/
+
+    /*
+    function primero(segundo){
+        setTimeout(function(){
+                console.log('Primero')
+                segundo();
+        },3000)
+    
+    }
+
+    function segundo(){
+        console.log('Segundo')
+    }
+
+    primero(segundo);
+    */
+    /*
+    function cuadradoCallback(value,callback){
+        setTimeout(()=>{callback(value,value*value);},0|Math.random()*1000)
+    }
+
+    cuadradoCallback(0,(value,result)=>{
+        console.log('Inicia Callback')
+        console.log(`Callback ${value},${result}`)
+        cuadradoCallback(1,(value,result)=>{
+
+            console.log(`Callback ${value},${result}`)
+            cuadradoCallback(2,(value,result)=>{
+
+                console.log(`Callback ${value},${result}`)
+                cuadradoCallback(3,(value,result)=>{
+
+                    console.log(`Callback ${value},${result}`)
+                    cuadradoCallback(4,(value,result)=>{
+    
+                        console.log(`Callback ${value},${result}`)
+                        cuadradoCallback(5,(value,result)=>{
+
+                            console.log(`Callback ${value},${result}`)
+                            cuadradoCallback(6,(value,result)=>{
+
+                                console.log(`Callback ${value},${result}`)
+                                cuadradoCallback(7,(value,result)=>{
+
+                                    console.log(`Callback ${value},${result}`)
+                                    cuadradoCallback(8,(value,result)=>{
+          
+                                        console.log(`Callback ${value},${result}`)
+                                        cuadradoCallback(9,(value,result)=>{
+
+                                            console.log(`Callback ${value},${result}`)
+                                            cuadradoCallback(10,(value,result)=>{
+
+                                                console.log(`Callback ${value},${result}`)
+                                            })
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                    })
+                })
+            })
+        })
+    })
+    */
+    
+
+    //Curso JavaScript: 47. Promesas - #jonmircha
+    /*
+    const promesa = new Promise((resolve,reject)=>{
+       setTimeout(()=>{
+           const exito = true;
+           (exito)?resolve():reject();
+
+       },2000);
+    })
+
+    promesa.then(()=>{
+        alert('Exito')
+    })
+
+    promesa.catch(()=>{
+        alert('Error')
+    })
+    */
+
+    //Curso JavaScript: 48. Async - Await - #jonmircha
+/*
+    function cuadradoPromise(value){
+        if(typeof value !== 'number'){
+            return Promise.reject(`Error, El valor ${value} Ingresado no es un numero`)
+        }
+
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve({
+                    value,
+                    result:value*value
+                })
+            },0|Math.random()*2000);
+        })
+
+    }
+
+    async function funcionAsincronaDeclarada(){
+        try{
+            console.log('Inicio Async')
+
+            let obj = await cuadradoPromise(1)
+            console.log(`Async Function:${obj.value},${obj.result}`)
+
+            let obj = await cuadradoPromise(2)
+            console.log(`Async Function:${obj.value},${obj.result}`)
+
+            let obj = await cuadradoPromise(3)
+            console.log(`Async Function:${obj.value},${obj.result}`)
+
+            let obj = await cuadradoPromise(4)
+            console.log(`Async Function:${obj.value},${obj.result}`)
+
+            let obj = await cuadradoPromise(5)
+            console.log(`Async Function:${obj.value},${obj.result}`)
+
+        }catch(err){
+            console.error(err)
+        }
+    }
+    */
+
+    //    Curso JavaScript: 51. Maps - #jonmircha
+    /*
+    let mapa = new Map();
+    mapa.set('Nombre','Jhon')
+    mapa.set('Profesion','Frontend Developer')
+    mapa.set('Edad',24)
+
+    console.log(mapa)
+    console.log(mapa.has('Nombre'))
+    console.log(mapa.has('Ciudad'))
+    console.log(mapa.size)
+    console.log(mapa.get('Nombre'))
+    console.log(mapa.set('Nombre','Anderson'))
+    console.log(mapa.delete('Edad'))
+    console.log(mapa.get('Nombre'))
+    console.log(mapa)
+
+    //MApa es un elemento ITERABLE
+
+    for (let [key,value]of mapa){
+        console.log(`Llave: ${key} | Valor: ${value}`)
+    }
+
+    //Las llaves en Map pueden ser un valor diferente a cadena de Texto
+
+    const mapa2 = new Map([
+        ['Nombre','Samuel'],
+        ['Edad',15],
+        ['Animal','Perro'],
+        [null,'Nulo']
+    ])
+
+    //El tipo MAP se parece mas los objetos y los SETS mas a los arreglos
+    console.log(mapa2)
+    const llavesmapa2 = [...mapa2.keys()] //Nos expone los llaves almacenados dentro del Objeto
+    console.log(llavesmapa2)
+    const valoresmapa2 = [...mapa2.values()] //Nos expone los valores almacenados dent
+    console.log(valoresmapa2)
+    */
+
+    //Curso JavaScript: 54. Generators - #jonmircha
+    /*
+    function* iterable(){
+        yield 'hola'
+        console.log('Hola Console')
+        yield 'hola2'
+        console.log('Seguimos con más instrucciones de nuestro código')
+        yield 'hola3'
+        yield 'hola4'
+    }
+
+    let iterador = iterable()
+    console.log(iterador.next())
+    console.log(iterador.next())
+    console.log(iterador.next())
+    console.log(iterador.next())
+
+    */
+
+
+    //Curso JavaScript: 55. Proxies - #jonmircha
+    /*
+    const persona = {//Objeto Base
+        nombre:'',
+        apellido:'',
+        edad:(''),
+    }
+
+
+    const manejador={ //Hndler
+    set(obj,prop,valor){//Metodo set Que realiza las validaciones
+        obj[prop]=valor;//Para recibir el parametro y no Modificar el original
+        }
+    }
+
+
+    const jon = new Proxy(persona,manejador)
+
+    jon.nombre='Jhon'
+    jon.apellido='VERA'
+    jon.edad=(24)
+    console.log(jon)//Objeto de tipo Proxy
+    jon.linkedin='https://www.linkedin.com/in/anderson-vera-4945321a4/'
+    */
+
+    //Curso JavaScript: 56. Propiedades Dinámicas de los Objetos - #jonmircha
+    /*
+    const aleatorio = Math.round(Math.random()*100+5)
+    const objUsuarios ={
+        [`id_${aleatorio}`]:'Valor Aleatorio'
+    }
+    console.log(objUsuarios)
+    const usuarios =['jon','Razor','Barabara']
+
+    usuarios.forEach((usuario,index) => objUsuarios[`id_${index}`]=usuario)
+    console.log(objUsuarios)
+    */
+
+    //Curso JavaScript: 58. call, apply, bind - #jonmircha
+    /*
+    this.lugar = 'Contexto Global'
+
+    function saludar(saludo,aQuien){
+        console.log(`${saludo} ${aQuien} Desde ${this.lugar}`)
+    }
+
+    saludar('Hello','Razor')
+
+    const obj={
+        lugar:'Contexto Objeto'
+    }
+
+    saludar.call(obj,'Hola','Jhon')//Recibe los datos de forma normal
+    saludar.apply(obj,['Adios','Jon'])//Recibe  los datos por medio de un Parametro
+    saludar()
+
+    const persona={//Objeto
+        nombre:'Anderson',//Atributo
+        saludar: function(){//Funcion dentro de un objeto
+            //console.log(`Hola Senior,${a}`)//muestra el nombre dentro del Scop global si se le pasa parametro a retornar
+            console.log(`Hola Senior,${this.nombre}`)//Scop Objeto
+        }
+    }
+    persona.saludar()
+    console.log(persona.nombre)
+    //persona.saludar('Arcolito')
+
+    const otraPersona={//Objeto
+        nombre:'jaimito',//Asignacion de nombre del objeto
+        saludar:persona.saludar,//asignacion de atributo en modo funcion dentro de un objeto, tomando el Scop más cercano
+        saludar2:persona.saludar.bind(persona)//Bind nos enlaza con el contexto de otro objeto
+    }
+
+    otraPersona.saludar()
+    */
+
+
+   //Curso JavaScript: 59. JSON - #jonmircha
+
+
+
+
+
+    </script>
+
+</body>
+</html>

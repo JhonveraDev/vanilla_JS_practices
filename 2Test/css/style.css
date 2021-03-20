@@ -1,0 +1,46 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hero{
+    background-image: linear-gradient(to right, #f5ebe2 , #d6d5f4);
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+}
+
+.hero h1{
+    font-size: 100px;
+    color:gray;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#box-options{
+    display: none;
+}
+
+#box-options-2{
+    display: none;
+}
+
+.hero .btn-danger,
+.hero .btn-success,
+.hero .btn-warning,
+.hero .btn-info{
+    color: white;
+    font-size: 30px;
+    width: 200px;    
+}
+
+.hero .btn-info:nth-child(2){
+    background: #FF6600;
+}
+
+.hero .btn-info:nth-child(1){
+    background: #000080;
+}
